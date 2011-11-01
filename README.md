@@ -1,7 +1,7 @@
 node-dom
 ===
 
-Javascript DOM implementation
+Javascript fast DOM generation
 
 ## Purpose:
 
@@ -281,16 +281,3 @@ Images are loaded asynchronously, same image is loaded just once, then width/hei
 	See test/tests.txt
 	
 Tested on google, yahoo, msn, usual js frameworks and incredible e-commerce sites
-	
-## Conclusion :
-
-It was intended to be light but it is not really since sites are doing unbelievable things and frameworks are using specific things to identify what browser they are dealing with.
-
-Probably a lot of adaptations to make but first, performances have to be investigate.
-
-There are specific things to avoid expensive nodeLists manipulations but this remains not as fast as we would expect.
-	
-	
-	
-	
-
