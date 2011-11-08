@@ -5,15 +5,15 @@ Javascript fast DOM generation
 
 ## Purpose:
 
-Attempt to generate the DOM for a web page as fast as possible.
+Optimization to generate the W3C DOM for a web page as fast as possible.
 
-It is  a mix of W3C / WHATWG and specific adaptations for server side, following more what browsers are doing than W3C (ie not being really internally compliant but compliant externally at the end)
+It is  a mix of W3C / WHATWG and specific adaptations for server side and to increase speed, following more what browsers are doing than W3C (ie not being really internally compliant but compliant externally at the end)
 
-It does implement what is mostly used and attempts to return an acceptable result for what is rarely used.
+It does implement what is mostly used and returns an acceptable result for what is rarely used.
 
-It does handle scripts, style/link, images, xhr and cookies.
+It does handle scripts, styles, links, images, xhr and cookies.
 
-It does not handle virtual rendering, stylesheets (but can load links) and events (except onload)
+It does not handle virtual rendering, stylesheets (but can load links) and events (except onload), but does not crash if not implemented features are used.
 
 ## Install :
 
@@ -30,6 +30,7 @@ or
 Complementary modules :
 	 [Nais/node-cookies](https://github.com/Nais/node-cookies) 
 	 [driverdan/node-XMLHttpRequest](https://github.com/driverdan/node-XMLHttpRequest)
+	 [rsms/node-imagemagick](https://github.com/rsms/node-imagemagick)
 
 ## Simple case :
 
@@ -211,7 +212,7 @@ Complementary modules :
 									cookie: jar
 				};
 				
-				var window=dom(page,null,options); //global
+				window=dom(page,null,options); //global
 				
 				document=window.document; //global
 				
@@ -244,27 +245,27 @@ Complementary modules :
 
 dom(page,level,options) : level is not used
 
-options =	{	
-url:url,							
-							features: {
-										FetchExternalResources  : {script:'', img:'', input:'', link:''},
-										ProcessExternalResources: {script:'',img:'',link:'',input:''},
-										removeScript: true, //Remove scripts for innerHTML and outerHTML output
-							},
-							cookie: jar
-};
+	options =	{	
+								url:url,							
+								features: {
+											FetchExternalResources  : {script:'', img:'', input:'', link:''},
+											ProcessExternalResources: {script:'',img:'',link:'',input:''},
+											removeScript: true, //Remove scripts for innerHTML and outerHTML output
+								},
+								cookie: jar
+	};
 
 Remove from features if you don't want to use it :
 
 - script : load and execute scripts
 - link : load links
 - img/input : load images and background images, retrieve the size, assign width/height to the objects
-- removeScript : it's generally useless to keep scripts in inner/outerHTML output, so default should be true. Whatever is the setting, scripts present in innerHTML or outerHTML will not execute.
+- removeScript : it's generally useless to keep scripts in inner/outerHTML output, so default should be true. Whatever is the setting, scripts present in innerHTML or outerHTML will not execute as it is specified in standards.
 		
 
-## Ressources sequencing :
+## Resources sequencing :
 
-Unlike browsers scripts execution is a little defer here, scripts are loaded and queued (inline and outside), then executed in the right order on document.close() (which queue document) and onload is fired.
+Unlike browsers scripts execution is a little defer here, so it can not block the construction of the DOM, scripts are loaded and queued (inline and outside), then executed in the right order on document.close() (which queue document) and onload is fired.
 
 Since scripts can add others, queue can extend after document (then their execution can continue after readyState "complete").
 
@@ -280,4 +281,4 @@ Images are loaded asynchronously, same image is loaded just once, then width/hei
 
 	See test/tests.txt
 	
-Tested on google, yahoo, msn, usual js frameworks and incredible e-commerce sites
+Tested on google, yahoo, msn, usual js frameworks (jQuery, YUI, prototype, mootools,...) and unbelievable usual web sites
