@@ -17,8 +17,6 @@ It does not handle virtual rendering, stylesheets (but can load links) and event
 
 ## Install :
 
-#### Due to recent changes in VM, please use a node.js version <= 0.5.5
-
     npm install node-dom
 
 or
