@@ -280,3 +280,4 @@ Images are loaded asynchronously, same image is loaded just once, then width/hei
 	See test/tests.txt
 	
 Tested on google, yahoo, msn, usual js frameworks (jQuery, YUI, prototype, mootools,...) and unbelievable usual web sites.
+
