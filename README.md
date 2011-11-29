@@ -265,7 +265,7 @@ Remove from features if you don't want to use it :
 
 Unlike browsers scripts execution is a little defer here, so it can not block the construction of the DOM, scripts are loaded and queued (inline and outside), then executed in the right order on document.close() (which queue document) and onload is fired.
 
-Since scripts can add others, queue can extend after document (then their execution can continue after readyState "complete").
+Since scripts can add others, queue can extend after document complete (then their execution can continue after readyState "complete").
 
 When queue is empty, scripts are executed right away and onload fired.
 
@@ -279,5 +279,5 @@ Images are loaded asynchronously, same image is loaded just once, then width/hei
 
 	See test/tests.txt
 	
-Tested on google, yahoo, msn, usual js frameworks (jQuery, YUI, prototype, mootools,...) and unbelievable usual web sites.
+Tested on google, yahoo, msn web sites, usual js frameworks (jQuery, YUI, prototype, mootools,...) and unbelievable usual web sites.
 
