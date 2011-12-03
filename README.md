@@ -1,7 +1,7 @@
 node-dom
 ===
 
-Javascript fast DOM generation
+Javascript fast DOM generation.
 
 ## Purpose:
 
@@ -280,5 +280,3 @@ Images are loaded asynchronously, same image is loaded just once, then width/hei
 	See test/tests.txt
 	
 Tested on google, yahoo, msn web sites, usual js frameworks (jQuery, YUI, prototype, mootools,...) and unbelievable usual web sites.
-
-
