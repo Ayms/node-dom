@@ -5,9 +5,9 @@ Javascript fast DOM generation.
 
 ## Purpose:
 
-Optimization to generate the W3C DOM for a web page as fast as possible.
+Implementation of the W3C DOM for a web page as fast as possible.
 
-It is  a mix of W3C / WHATWG and specific adaptations for server side and to increase speed, following more what browsers are doing than W3C (ie not being really internally compliant but compliant externally at the end)
+It is  a mix of W3C / WHATWG and specific adaptations for server side use in order to increase speed, following more what browsers are doing than W3C (ie not being really internally compliant but compliant externally at the end)
 
 It does implement what is mostly used and returns an acceptable result for what is rarely used.
 
@@ -280,3 +280,11 @@ Images are loaded asynchronously, same image is loaded just once, then width/hei
 	See test/tests.txt
 	
 Tested on google, yahoo, msn web sites, usual js frameworks (jQuery, YUI, prototype, mootools,...) and unbelievable usual web sites.
+
+Other applications :
+
+[Nais/node-bot](https://github.com/Nais/node-bot)
+[Nais/node-gadgets](https://github.com/Nais/node-gadgets)
+[Nais/node-googleSearch](https://github.com/Nais/node-googleSearch)
+
+
