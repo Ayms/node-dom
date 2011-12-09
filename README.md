@@ -281,10 +281,8 @@ Images are loaded asynchronously, same image is loaded just once, then width/hei
 	
 Tested on google, yahoo, msn web sites, usual js frameworks (jQuery, YUI, prototype, mootools,...) and unbelievable usual web sites.
 
-Other applications :
+Other applications using node-dom :
 
 [Nais/node-bot](https://github.com/Nais/node-bot)
 [Nais/node-gadgets](https://github.com/Nais/node-gadgets)
 [Nais/node-googleSearch](https://github.com/Nais/node-googleSearch)
-
-
