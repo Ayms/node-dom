@@ -5,9 +5,9 @@ Javascript fast DOM generation.
 
 ## Purpose:
 
-Implementation of the W3C DOM for a web page as fast as possible.
+Fast javascript implementation of the W3C DOM.
 
-It is  a mix of W3C / WHATWG and specific adaptations for server side use in order to increase speed, following more what browsers are doing than W3C (ie not being really internally compliant but compliant externally at the end)
+It is  a mix of W3C / WHATWG specifications and specific performances optimizations for server side use fully compliant at the end with W3C standards.
 
 It does implement what is mostly used and returns an acceptable result for what is rarely used.
 
@@ -71,9 +71,9 @@ Complementary modules :
 			//Context are explained here https://github.com/joyent/node/issues/1674
 					
 				fs.writeFile('./outer.html', document.html.outerHTML, function (err) {});
-				//check the result if you want in created outer.html file
-				//if you want to test it in a browser, don't forget to put the base tag after <head> with correct href	
-			};
+				//check the result in outer.html file
+				//to test the result in a browser, don't forget to put the base tag after <head> with the correct href
+				};
 		};
 	});
 ````
@@ -131,16 +131,16 @@ Complementary modules :
 			//Add your code and do what you have to do with the DOM
 				
 				fs.writeFile('./outer.html', document.html.outerHTML, function (err) {});
-				//check the result if you want in created outer.html file
-				//if you want to test it in a browser, don't forget to put the base tag after <head> with correct href
+				//check the result in outer.html file
+				//to test the result in a browser, don't forget to put the base tag after <head> with the correct href
 				
 				//Example, add your class
 				//var MyClass = new require('MyClass').MyClass();
 				//window.$=window.jQuery=require('jQuery').jQuery (invention here, let's say you want to use jQuery)
 				
-				//Do what you have to do in the DOM
-				//MyClass.do_some_stuff_in_the_page();
-				//Use jQuery
+				//Do what you have to do with the DOM
+				//Ex1 : MyClass.do_some_stuff_in_the_page();
+				//Ex2 : Use jQuery
 		
 			};
 		};
@@ -220,16 +220,16 @@ Complementary modules :
 				//Add your code and do what you have to do with the DOM
 					
 					fs.writeFile('./outer.html', document.html.outerHTML, function (err) {});
-					//check the result if you want in created outer.html file
-					//if you want to test it in a browser, don't forget to put the base tag after <head> with correct href
+					//check the result in outer.html file
+					//to test the result in a browser, don't forget to put the base tag after <head> with the correct href
 					
 					//Example, add your class
 					//var MyClass = new require('MyClass').MyClass();
 					//window.$=window.jQuery=require('jQuery').jQuery (invention here, let's say you want to use jQuery)
 					
-					//Do what you have to do in the DOM
-					//MyClass.do_some_stuff_in_the_page();
-					//Use jQuery
+					//Do what you have to do with the DOM
+					//Ex1 : MyClass.do_some_stuff_in_the_page();
+					//Ex2 : Use jQuery
 					
 					//save cookies
 					cookies.mergeJar(fullJar,document._cookie).saveToFile(args.cookies);
@@ -265,15 +265,15 @@ Remove from features if you don't want to use it :
 
 Unlike browsers scripts execution is a little defer here, so it can not block the construction of the DOM, scripts are loaded and queued (inline and outside), then executed in the right order on document.close() (which queue document) and onload is fired.
 
-Since scripts can add others, queue can extend after document complete (then their execution can continue after readyState "complete").
+Since scripts can add others, queue can still extend after document complete (then their execution can happen after readyState "complete").
 
-When queue is empty, scripts are executed right away and onload fired.
+When queue is empty, scripts are executed right away and onload is fired.
 
-Scripts that fail will be re-executed after a certain delay, see comments in the code why it can happen
+Scripts that fail will be re-executed after a certain delay, see comments in the code why it can happen.
 
 Same happens for links.
 
-Images are loaded asynchronously, same image is loaded just once, then width/height are set to objects that are using this image.
+Images are loaded asynchronously, same image is loaded just once, then width/height are set to objects related to this image.
 	
 ## Tests :
 
