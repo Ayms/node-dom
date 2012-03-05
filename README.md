@@ -21,14 +21,14 @@ It does not handle virtual rendering, stylesheets (but can load links) and event
 
 or
 
-    git clone http://github.com/Nais/node-dom.git
+    git clone http://github.com/Ayms/node-dom.git
     cd node-dom
     npm link .
 	
 Complementary modules :
-	 [Nais/node-cookies](https://github.com/Nais/node-cookies) 
-	 [driverdan/node-XMLHttpRequest](https://github.com/driverdan/node-XMLHttpRequest)
-	 [rsms/node-imagemagick](https://github.com/rsms/node-imagemagick)
+	[Ayms/node-cookies](https://github.com/Ayms/node-cookies)
+	[driverdan/node-XMLHttpRequest](https://github.com/driverdan/node-XMLHttpRequest)
+	[rsms/node-imagemagick](https://github.com/rsms/node-imagemagick)
 
 ## Simple case :
 
@@ -283,6 +283,6 @@ Tested on google, yahoo, msn web sites, usual js frameworks (jQuery, YUI, protot
 
 Other applications using node-dom :
 
-[Nais/node-bot](https://github.com/Nais/node-bot)
-[Nais/node-gadgets](https://github.com/Nais/node-gadgets)
-[Nais/node-googleSearch](https://github.com/Nais/node-googleSearch)
+[Ayms/node-bot](https://github.com/Ayms/node-bot)
+[Ayms/node-gadgets](https://github.com/Ayms/node-gadgets)
+[Ayms/node-googleSearch](https://github.com/Ayms/node-googleSearch)
