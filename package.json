@@ -2,7 +2,7 @@
   "name": "node-dom",
   "description": "Attempt for javascript fast DOM implementation from a web page, internally not compliant to w3c (performances), externally compliant",
   "version": "0.1.0",
-  "homepage": "http://www.infonais.fr",
+  "homepage": "http://www.jcore.fr",
   "keywords": [
         "dom",
 		"html",
@@ -28,7 +28,7 @@
           "type": "MIT"
       }
   ],
-  "author": "Aymeric Vitte <aymeric2@infonais.fr> (http://www.infonais.fr)",
+  "author": "Aymeric Vitte <avitte@jcore.fr> (http://www.jcore.fr)",
   "main": "./lib/dom.js",
   "engines": {
     "node": "*"

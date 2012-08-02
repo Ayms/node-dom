@@ -26,6 +26,7 @@ or
     npm link .
 	
 Complementary modules :
+	[Ayms/node-Tor](https://github.com/Ayms/node-Tor)
 	[Ayms/node-cookies](https://github.com/Ayms/node-cookies)
 	[driverdan/node-XMLHttpRequest](https://github.com/driverdan/node-XMLHttpRequest)
 	[rsms/node-imagemagick](https://github.com/rsms/node-imagemagick)
@@ -274,7 +275,11 @@ Scripts that fail will be re-executed after a certain delay, see comments in the
 Same happens for links.
 
 Images are loaded asynchronously, same image is loaded just once, then width/height are set to objects related to this image.
-	
+
+## Tunnelling with node-Tor :
+
+	TODO
+
 ## Tests :
 
 	See test/tests.txt
