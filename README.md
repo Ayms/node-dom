@@ -278,7 +278,7 @@ Images are loaded asynchronously, same image is loaded just once, then width/hei
 
 ## Tunnelling with node-Tor :
 
-	TODO
+	TODO - watch https://github.com/Ayms/node-Tor
 
 ## Tests :
 
